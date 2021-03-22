@@ -1,9 +1,6 @@
 {
     "folders": [
         {
-            "path": "list-of-lists-identity-server"
-        },
-        {
             "path": "list-of-lists-api"
         },
         {
@@ -11,6 +8,9 @@
         },
         {
             "path": "list-of-lists-webapp"
+        },
+        {
+            "path": "list-of-lists-identity"
         }
     ],
     "settings": {
