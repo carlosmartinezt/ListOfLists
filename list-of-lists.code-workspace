@@ -14,6 +14,9 @@
         }
     ],
     "settings": {
-        "prettier.useEditorConfig": false
+        "prettier.useEditorConfig": false,
+        "emmet.includeLanguages": {
+            "html": "html"
+        }
     }
 }

@@ -2,7 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>list_of_lists_webapp</RootNamespace>
+    <RootNamespace>list_of_lists</RootNamespace>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+    <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
     <UserSecretsId>2cefd9c5-852a-4e28-b804-81f37d8e2299</UserSecretsId>
   </PropertyGroup>
 
@@ -13,6 +16,11 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\" />
+    <Folder Include="wwwroot\" />
+    <Folder Include="Content\" />
   </ItemGroup>
 
 </Project>
