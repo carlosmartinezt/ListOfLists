@@ -2,7 +2,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 100,
-  "editor.rulers": [60],
+  "editor.rulers": [100],
   "editor.tabSize": 2,
   "editor.formatOnPaste": false,
   "editor.formatOnType": true,
@@ -11,6 +11,5 @@
   "editor.minimap.maxColumn": 50,
   "editor.minimap.showSlider": "always",
   "editor.minimap.scale": 3,
-  "editor.detectIndentation": false,
   "css.lint.emptyRules": "ignore"
 }
