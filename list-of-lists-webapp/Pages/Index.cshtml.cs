@@ -12,9 +12,9 @@ namespace list_of_lists_webapp.Pages {
         public List<Data.Models.DataType> DataTypes;
 
         private readonly ILogger<IndexModel> _logger;
-        private ListsContext _context;
+        private ListsDbContext _context;
 
-        public IndexModel(ILogger<IndexModel> logger, ListsContext context) {
+        public IndexModel(ILogger<IndexModel> logger, ListsDbContext context) {
             _logger = logger;
             _context = context;
         }

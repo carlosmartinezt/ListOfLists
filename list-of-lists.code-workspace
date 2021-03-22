@@ -8,9 +8,6 @@
         },
         {
             "path": "list-of-lists-webapp"
-        },
-        {
-            "path": "list-of-lists-identity"
         }
     ],
     "settings": {
