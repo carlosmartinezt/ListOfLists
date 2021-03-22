@@ -25,6 +25,7 @@ namespace list_of_lists_webapp {
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
+            services.AddHttpContextAccessor();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages().AddRazorRuntimeCompilation();
 
@@ -86,6 +87,7 @@ namespace list_of_lists_webapp {
                     options.ClientId = "908238563051-0oj3lg64luh53bh9mn6jibd8suefu10i.apps.googleusercontent.com";
                     options.ClientSecret = "4taunzTqzYoSflkApj3mv3Op";
                 });
+            services.AddScoped<ListsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

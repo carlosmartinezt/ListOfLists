@@ -3,24 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using list_of_lists_webapp.Data;
+using list_of_lists_webapp.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
 namespace list_of_lists_webapp.Pages {
-    public class IndexModel : PageModel {
-        public List<Data.Models.DataType> DataTypes;
+    public class IndexModel : BasePageModel {
+        public List<Data.Models.List> Lists;
 
-        private readonly ILogger<IndexModel> _logger;
-        private ListsDbContext _context;
+        public Data.Models.List SelectedList;
 
-        public IndexModel(ILogger<IndexModel> logger, ListsDbContext context) {
-            _logger = logger;
-            _context = context;
+        private readonly ILogger<IndexModel> logger;
+        protected ListsService listsService { get; }
+
+        public IndexModel(
+            UserManager<IdentityUser> userManager,
+            ILogger<IndexModel> logger,
+            ListsService listsService
+        )
+        : base(userManager) {
+            this.logger = logger;
+            this.listsService = listsService;
         }
 
-        public void OnGet() {
-            DataTypes = _context.DataTypes.ToList();
+        public async Task OnGetAsync(string listUID) {
+            Lists = await listsService.ListListsAsync();
+            SelectedList = Lists.Where(l => l.Uid.ToString() == listUID).SingleOrDefault();
         }
     }
 }

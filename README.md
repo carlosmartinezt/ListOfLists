@@ -13,4 +13,4 @@ Continue reading:
 - https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-5.0&tabs=netcore-cli
 - https://docs.microsoft.com/en-us/ef/core/managing-schemas/scaffolding?tabs=dotnet-core-cli
 - https://docs.identityserver.io/en/latest/quickstarts/6_aspnet_identity.html
-
+- https://docs.microsoft.com/en-us/aspnet/core/security/authorization/secure-data?view=aspnetcore-5.0
