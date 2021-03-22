@@ -1,16 +1,19 @@
 {
     "folders": [
-		{
-			"path": "list-of-lists-identity-server"
-		},
-		{
-			"path": "list-of-lists-api"
-		},
-		{
-			"path": "list-of-lists-console"
-		}
-	],
-	"settings": {
-		"prettier.useEditorConfig": false
-	}
+        {
+            "path": "list-of-lists-identity-server"
+        },
+        {
+            "path": "list-of-lists-api"
+        },
+        {
+            "path": "list-of-lists-console"
+        },
+        {
+            "path": "list-of-lists-webapp"
+        }
+    ],
+    "settings": {
+        "prettier.useEditorConfig": false
+    }
 }
