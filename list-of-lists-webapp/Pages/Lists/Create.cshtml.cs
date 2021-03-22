@@ -25,7 +25,7 @@ namespace list_of_lists.Pages.Lists {
         }
 
         [BindProperty]
-        public List List { get; set; }
+        public List List { get; set; } = default!;
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync() {

@@ -34,33 +34,33 @@ namespace list_of_lists.Areas.Identity.Pages.Account {
         }
 
         [BindProperty]
-        public InputModel Input { get; set; }
+        public InputModel Input { get; set; } = default!;
 
-        public string ProviderDisplayName { get; set; }
+        public string? ProviderDisplayName { get; set; }
 
-        public string ReturnUrl { get; set; }
+        public string? ReturnUrl { get; set; }
 
         [TempData]
-        public string ErrorMessage { get; set; }
+        public string? ErrorMessage { get; set; }
 
         public class InputModel {
             [Required]
             [EmailAddress]
-            public string Email { get; set; }
+            public string? Email { get; set; }
         }
 
         public IActionResult OnGetAsync() {
             return RedirectToPage("./Login");
         }
 
-        public IActionResult OnPost(string provider, string returnUrl = null) {
+        public IActionResult OnPost(string provider, string? returnUrl = null) {
             // Request a redirect to the external login provider.
             var redirectUrl = Url.Page("./ExternalLogin", pageHandler: "Callback", values: new { returnUrl });
             var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
             return new ChallengeResult(provider, properties);
         }
 
-        public async Task<IActionResult> OnGetCallbackAsync(string returnUrl = null, string remoteError = null) {
+        public async Task<IActionResult> OnGetCallbackAsync(string? returnUrl = null, string? remoteError = null) {
             returnUrl = returnUrl ?? Url.Content("~/");
             if (remoteError != null) {
                 ErrorMessage = $"Error from external provider: {remoteError}";
@@ -75,7 +75,7 @@ namespace list_of_lists.Areas.Identity.Pages.Account {
             // Sign in the user with this external login provider if the user already has a login.
             var result = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false, bypassTwoFactor: true);
             if (result.Succeeded) {
-                _logger.LogInformation("{Name} logged in with {LoginProvider} provider.", info.Principal.Identity.Name, info.LoginProvider);
+                _logger.LogInformation("{Name} logged in with {LoginProvider} provider.", info.Principal.Identity?.Name, info.LoginProvider);
                 return LocalRedirect(returnUrl);
             }
             if (result.IsLockedOut) {
@@ -93,7 +93,7 @@ namespace list_of_lists.Areas.Identity.Pages.Account {
             }
         }
 
-        public async Task<IActionResult> OnPostConfirmationAsync(string returnUrl = null) {
+        public async Task<IActionResult> OnPostConfirmationAsync(string? returnUrl = null) {
             returnUrl = returnUrl ?? Url.Content("~/");
             // Get the information about the user from the external login provider
             var info = await _signInManager.GetExternalLoginInfoAsync();

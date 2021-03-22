@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using list_of_lists.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -16,6 +17,12 @@ namespace list_of_lists.Services {
             this.dbContext = dbContext;
             this.userManager = userManager;
             this.httpContextAccessor = httpContextAccessor;
+        }
+
+        protected async Task<string> GetUserIdAsync() {
+            var User = httpContextAccessor.HttpContext?.User;
+            var user = await userManager.GetUserAsync(User);
+            return user.Id;
         }
     }
 }

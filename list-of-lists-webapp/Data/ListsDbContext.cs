@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Identity;
 #nullable disable
 
 namespace list_of_lists.Data {
-    public partial class ListsDbContext : IdentityDbContext<IdentityUser> {
+    public partial class ListsDbContext : DbContext {
         public ListsDbContext() {
         }
 

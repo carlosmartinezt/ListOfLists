@@ -11,9 +11,10 @@ using Microsoft.Extensions.Logging;
 
 namespace list_of_lists.Pages {
     public class IndexModel : BasePageModel {
-        public List<Data.Models.List> Lists;
 
-        public Data.Models.List SelectedList;
+        public List<Data.Models.List> Lists = default!;
+        public List<Data.Models.Item> Items = default!;
+        public Data.Models.List SelectedList = default!;
 
         private readonly ILogger<IndexModel> logger;
         protected ListsService listsService { get; }
@@ -28,9 +29,17 @@ namespace list_of_lists.Pages {
             this.listsService = listsService;
         }
 
-        public async Task OnGetAsync(string listUID) {
+        public async Task<IActionResult> OnGetAsync(string listUID) {
             Lists = await listsService.ListListsAsync();
-            SelectedList = Lists.Where(l => l.Uid.ToString() == listUID).SingleOrDefault();
+            SelectedList = await listsService.GetListAsync(listUID);
+            Items = await listsService.ListItemsAsync(listUID);
+            return Page();
+        }
+
+        public async Task<IActionResult> OnPostAsync(string SelectedListUid, string title) {
+            var _selectedListUid = Request.Form["SelectedList.Uid"];
+            await listsService.AddItemAsync(title, _selectedListUid);
+            return await OnGetAsync(_selectedListUid);
         }
     }
 }

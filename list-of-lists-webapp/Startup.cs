@@ -7,7 +7,6 @@ using list_of_lists.Data;
 using list_of_lists.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,9 +29,10 @@ namespace list_of_lists {
             services.AddRazorPages().AddRazorRuntimeCompilation();
 
             services.AddDbContext<ListsDbContext>();
+            services.AddDbContext<ListsIdentityDbContext>();
 
             services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<ListsDbContext>()
+                .AddEntityFrameworkStores<ListsIdentityDbContext>()
                 .AddDefaultTokenProviders();
 
             services.AddMvc()
