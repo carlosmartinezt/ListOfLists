@@ -12,12 +12,9 @@ using Serilog.Sinks.SystemConsole.Themes;
 using System;
 using System.Linq;
 
-namespace list_of_lists_identity
-{
-    public class Program
-    {
-        public static int Main(string[] args)
-        {
+namespace list_of_lists {
+    public class Program {
+        public static int Main(string[] args) {
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
@@ -35,18 +32,15 @@ namespace list_of_lists_identity
                 .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}", theme: AnsiConsoleTheme.Code)
                 .CreateLogger();
 
-            try
-            {
+            try {
                 var seed = args.Contains("/seed");
-                if (seed)
-                {
+                if (seed) {
                     args = args.Except(new[] { "/seed" }).ToArray();
                 }
 
                 var host = CreateHostBuilder(args).Build();
 
-                if (seed)
-                {
+                if (seed) {
                     Log.Information("Seeding database...");
                     var config = host.Services.GetRequiredService<IConfiguration>();
                     var connectionString = config.GetConnectionString("DefaultConnection");
@@ -58,14 +52,10 @@ namespace list_of_lists_identity
                 Log.Information("Starting host...");
                 host.Run();
                 return 0;
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 Log.Fatal(ex, "Host terminated unexpectedly.");
                 return 1;
-            }
-            finally
-            {
+            } finally {
                 Log.CloseAndFlush();
             }
         }
@@ -73,8 +63,7 @@ namespace list_of_lists_identity
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .UseSerilog()
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
+                .ConfigureWebHostDefaults(webBuilder => {
                     webBuilder.UseStartup<Startup>();
                 });
     }

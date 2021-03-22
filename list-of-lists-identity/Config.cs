@@ -6,10 +6,8 @@ using IdentityServer4;
 using IdentityServer4.Models;
 using System.Collections.Generic;
 
-namespace list_of_lists_identity
-{
-    public static class Config
-    {
+namespace list_of_lists {
+    public static class Config {
         public static IEnumerable<IdentityResource> IdentityResources =>
                    new IdentityResource[]
                    {
