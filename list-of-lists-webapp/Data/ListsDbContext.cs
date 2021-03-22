@@ -69,6 +69,7 @@ namespace list_of_lists_webapp.Data {
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
 
+                entity.Property(e => e.CreatorUserId).IsRequired();
                 entity.Property(e => e.DateModified).HasColumnType("datetime");
 
                 entity.Property(e => e.Name)
@@ -84,6 +85,7 @@ namespace list_of_lists_webapp.Data {
             modelBuilder.Entity<FieldValue>(entity => {
                 entity.ToTable("FieldValue");
 
+                entity.Property(e => e.CreatorUserId).IsRequired();
                 entity.Property(e => e.DateCreated)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
@@ -102,6 +104,7 @@ namespace list_of_lists_webapp.Data {
             modelBuilder.Entity<Item>(entity => {
                 entity.ToTable("Item");
 
+                entity.Property(e => e.CreatorUserId).IsRequired();
                 entity.Property(e => e.DateCreated)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
@@ -120,6 +123,7 @@ namespace list_of_lists_webapp.Data {
             modelBuilder.Entity<List>(entity => {
                 entity.ToTable("List");
 
+                entity.Property(e => e.CreatorUserId).IsRequired();
                 entity.Property(e => e.DateCreated)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
