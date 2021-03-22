@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
-using list_of_lists_webapp.Data;
+using list_of_lists.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 
-namespace list_of_lists_webapp.Services {
+namespace list_of_lists.Services {
     public class ListsService : BaseService {
 
         public ListsService(

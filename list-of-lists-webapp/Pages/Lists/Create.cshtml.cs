@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using list_of_lists_webapp.Data;
-using list_of_lists_webapp.Data.Models;
+using list_of_lists.Data;
+using list_of_lists.Data.Models;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 
-namespace list_of_lists_webapp.Pages.Lists {
+namespace list_of_lists.Pages.Lists {
     public class CreateModel : PageModel {
         private readonly ListsDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;

@@ -5,22 +5,18 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using list_of_lists_webapp.Data;
-using list_of_lists_webapp.Data.Models;
+using list_of_lists.Data;
+using list_of_lists.Data.Models;
 
-namespace list_of_lists_webapp.Areas.Webmaster.Pages.DataTypes
-{
-    public class CreateModel : PageModel
-    {
-        private readonly list_of_lists_webapp.Data.ListsDbContext _context;
+namespace list_of_lists.Areas.Webmaster.Pages.DataTypes {
+    public class CreateModel : PageModel {
+        private readonly list_of_lists.Data.ListsDbContext _context;
 
-        public CreateModel(list_of_lists_webapp.Data.ListsDbContext context)
-        {
+        public CreateModel(list_of_lists.Data.ListsDbContext context) {
             _context = context;
         }
 
-        public IActionResult OnGet()
-        {
+        public IActionResult OnGet() {
             return Page();
         }
 
@@ -28,10 +24,8 @@ namespace list_of_lists_webapp.Areas.Webmaster.Pages.DataTypes
         public DataType DataType { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync()
-        {
-            if (!ModelState.IsValid)
-            {
+        public async Task<IActionResult> OnPostAsync() {
+            if (!ModelState.IsValid) {
                 return Page();
             }
 

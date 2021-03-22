@@ -5,13 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace list_of_lists_webapp.Areas.Identity.Pages.Account
-{
+namespace list_of_lists.Areas.Identity.Pages.Account {
     [AllowAnonymous]
-    public class LockoutModel : PageModel
-    {
-        public void OnGet()
-        {
+    public class LockoutModel : PageModel {
+        public void OnGet() {
 
         }
     }

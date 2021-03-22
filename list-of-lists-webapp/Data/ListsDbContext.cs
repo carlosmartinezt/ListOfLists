@@ -1,11 +1,11 @@
-﻿using list_of_lists_webapp.Data.Models;
+﻿using list_of_lists.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 
 #nullable disable
 
-namespace list_of_lists_webapp.Data {
+namespace list_of_lists.Data {
     public partial class ListsDbContext : IdentityDbContext<IdentityUser> {
         public ListsDbContext() {
         }

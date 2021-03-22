@@ -15,7 +15,7 @@
                 "ASPNETCORE_ENVIRONMENT": "Development"
             }
         },
-        "list_of_lists_webapp": {
+        "list_of_lists": {
             "commandName": "Project",
             "dotnetRunMessages": "true",
             "launchBrowser": true,

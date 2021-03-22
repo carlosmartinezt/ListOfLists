@@ -6,13 +6,13 @@ using System;
 using System.Linq;
 using System.Security.Claims;
 using IdentityModel;
-using list_of_lists_webapp.Data;
+using list_of_lists.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 
-namespace list_of_lists_webapp {
+namespace list_of_lists {
     public class SeedData {
         public static void EnsureSeedData() {
             var services = new ServiceCollection();

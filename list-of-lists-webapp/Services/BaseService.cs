@@ -1,8 +1,8 @@
-using list_of_lists_webapp.Data;
+using list_of_lists.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 
-namespace list_of_lists_webapp.Services {
+namespace list_of_lists.Services {
     public class BaseService {
         protected readonly ListsDbContext dbContext;
         protected readonly UserManager<IdentityUser> userManager;

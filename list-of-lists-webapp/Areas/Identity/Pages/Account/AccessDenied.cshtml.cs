@@ -4,12 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace list_of_lists_webapp.Areas.Identity.Pages.Account
-{
-    public class AccessDeniedModel : PageModel
-    {
-        public void OnGet()
-        {
+namespace list_of_lists.Areas.Identity.Pages.Account {
+    public class AccessDeniedModel : PageModel {
+        public void OnGet() {
 
         }
     }

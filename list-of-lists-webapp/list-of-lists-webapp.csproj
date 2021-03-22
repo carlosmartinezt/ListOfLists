@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>list_of_lists_webapp</RootNamespace>
+    <RootNamespace>list_of_lists</RootNamespace>
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
     <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
     <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>

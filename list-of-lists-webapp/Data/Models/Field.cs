@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace list_of_lists_webapp.Data.Models {
+namespace list_of_lists.Data.Models {
     public partial class Field {
         public int Id { get; set; }
         public Guid Uid { get; set; }

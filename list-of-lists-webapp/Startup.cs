@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
-using list_of_lists_webapp.Data;
-using list_of_lists_webapp.Services;
+using list_of_lists.Data;
+using list_of_lists.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -15,7 +15,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using IdentityServer4;
 
-namespace list_of_lists_webapp {
+namespace list_of_lists {
     public class Startup {
         public Startup(IConfiguration configuration) {
             Configuration = configuration;

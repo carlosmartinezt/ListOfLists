@@ -1,11 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace list_of_lists_webapp.Migrations
-{
-    public partial class creatorUserIdRequired : Migration
-    {
-        protected override void Up(MigrationBuilder migrationBuilder)
-        {
+namespace list_of_lists.Migrations {
+    public partial class creatorUserIdRequired : Migration {
+        protected override void Up(MigrationBuilder migrationBuilder) {
             migrationBuilder.AlterColumn<string>(
                 name: "CreatorUserId",
                 table: "List",
@@ -47,8 +44,7 @@ namespace list_of_lists_webapp.Migrations
                 oldNullable: true);
         }
 
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
+        protected override void Down(MigrationBuilder migrationBuilder) {
             migrationBuilder.AlterColumn<string>(
                 name: "CreatorUserId",
                 table: "List",

@@ -1,11 +1,11 @@
-using list_of_lists_webapp.Services;
+using list_of_lists.Services;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.Extensions.Options;
 using SendGrid;
 using SendGrid.Helpers.Mail;
 using System.Threading.Tasks;
 
-namespace list_of_lists_webapp.Services {
+namespace list_of_lists.Services {
     public class EmailSender : IEmailSender {
         public EmailSender(IOptions<AuthMessageSenderOptions> optionsAccessor) {
             Options = optionsAccessor.Value;

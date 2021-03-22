@@ -11,7 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace list_of_lists_webapp {
+namespace list_of_lists {
     public class Program {
         public static int Main(string[] args) {
             Log.Logger = new LoggerConfiguration()

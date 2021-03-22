@@ -1,5 +1,5 @@
 @page
-@model list_of_lists_webapp.Areas.Webmaster.Pages.DataTypes.DeleteModel
+@model list_of_lists.Areas.Webmaster.Pages.DataTypes.DeleteModel
 
 @{
     ViewData["Title"] = "Delete";
@@ -37,7 +37,7 @@
             @Html.DisplayFor(model => model.DataType.IsDeleted)
         </dd>
     </dl>
-    
+
     <form method="post">
         <input type="hidden" asp-for="DataType.Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |

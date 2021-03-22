@@ -1,9 +1,9 @@
-using list_of_lists_webapp.Data;
-using list_of_lists_webapp.Services;
+using list_of_lists.Data;
+using list_of_lists.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace list_of_lists_webapp.Pages {
+namespace list_of_lists.Pages {
     public class BasePageModel : PageModel {
         //protected IAuthorizationService AuthorizationService { get; }
         protected UserManager<IdentityUser> userManager { get; }

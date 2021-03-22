@@ -3,10 +3,8 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace list_of_lists_webapp.Data.Models
-{
-    public partial class DataType
-    {
+namespace list_of_lists.Data.Models {
+    public partial class DataType {
         public int Id { get; set; }
         public Guid Uid { get; set; }
         public string Name { get; set; }
