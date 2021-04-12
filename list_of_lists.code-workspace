@@ -1,13 +1,13 @@
 {
     "folders": [
         {
-            "path": "list-of-lists-api"
+            "path": "list_of_lists_webapp"
         },
         {
-            "path": "list-of-lists-console"
+            "path": "list_of_lists_api"
         },
         {
-            "path": "list-of-lists-webapp"
+            "path": "list_of_lists_identity"
         }
     ],
     "settings": {

@@ -3,6 +3,7 @@
 @using Microsoft.AspNetCore.Authentication
 @{
     ViewData["Title"] = "Home page";
+    var selectedList = Model.SelectedList;
 }
 <div class="row">
     <div class="col-md-2">
@@ -11,7 +12,9 @@
             <ul>
                 @foreach (var item in Model.Lists)
                 {
-                    <li><a href="@Url.Page("Index", new {listUid = item.Uid})">@item.Name</a></li>
+                    var selected = selectedList != null && selectedList.Id == item.Id;
+                    var className = selected ? "selected" : "";
+                    <li><a href="@Url.Page("Index", new {listUid = item.Uid})" class="@className">@item.Name</a></li>
                 }
             </ul>
         </div>
