@@ -54,18 +54,20 @@ namespace list_of_lists.Services {
             return list;
         }
 
-        private async Task<IQueryable<Data.Models.Item>> ListItemsInternalsync(System.Guid listUid) {
+        private async Task<IQueryable<Data.Models.Item>> ListItemsInternalsync(
+            int listId
+        ) {
             var userId = await GetUserIdAsync();
             return (from item in dbContext.Items
                     where item.CreatorUserId == userId
                        && item.IsDeleted == false
-                       && item.ListId.Equals(listUid)
+                       && item.ListId == listId
                     select item);
         }
 
         public async Task<List<Data.Models.Item>> ListItemsAsync(string listUid) {
             var list = await GetListAsync(listUid);
-            var query = await ListItemsInternalsync(list.Uid);
+            var query = await ListItemsInternalsync(list.Id);
             return query.ToList();
         }
 
@@ -73,6 +75,7 @@ namespace list_of_lists.Services {
             var list = await GetListAsync(listUid);
             var item = new Data.Models.Item();
             item.Title = title;
+            item.ListId = list.Id;
             item.CreatorUserId = await GetUserIdAsync();
             dbContext.Items.Add(item);
             await dbContext.SaveChangesAsync();

@@ -7,7 +7,7 @@ namespace list_of_lists.Areas.Identity.Pages {
     [AllowAnonymous]
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public class ErrorModel : PageModel {
-        public string RequestId { get; set; }
+        public string RequestId { get; set; } = default!;
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 

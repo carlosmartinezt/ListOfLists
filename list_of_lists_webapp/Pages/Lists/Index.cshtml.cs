@@ -16,7 +16,7 @@ namespace list_of_lists.Pages.Lists {
             _context = context;
         }
 
-        public IList<List> List { get; set; }
+        public IList<List> List { get; set; } = default!;
 
         public async Task OnGetAsync() {
             List = await _context.Lists.ToListAsync();

@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 
 namespace list_of_lists.Pages {
     public class UserDataModel : PageModel {
-        public string UserId;
+        public string UserId = default!;
 
         private readonly ILogger<IndexModel> _logger;
         private readonly UserManager<IdentityUser> _userManager;
@@ -26,7 +26,7 @@ namespace list_of_lists.Pages {
 
         public async Task OnGetAsync() {
             var user = await _userManager.GetUserAsync(User);
-            UserId = user?.Id;
+            UserId = user.Id;
         }
     }
 }

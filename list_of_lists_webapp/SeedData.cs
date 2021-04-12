@@ -26,6 +26,9 @@ namespace list_of_lists {
             using (var serviceProvider = services.BuildServiceProvider()) {
                 using (var scope = serviceProvider.GetRequiredService<IServiceScopeFactory>().CreateScope()) {
                     var context = scope.ServiceProvider.GetService<ListsDbContext>();
+                    if (context == null) {
+                        return;
+                    }
                     context.Database.Migrate();
 
                     var userMgr = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();

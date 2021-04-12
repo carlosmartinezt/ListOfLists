@@ -14,6 +14,9 @@
         "prettier.useEditorConfig": false,
         "emmet.includeLanguages": {
             "html": "html"
-        }
+        },
+        "editor.formatOnPaste": true,
+        "editor.formatOnType": true,
+        "editor.formatOnSave": true
     }
 }

@@ -16,7 +16,7 @@ namespace list_of_lists.Areas.Webmaster.Pages.DataTypes {
             _context = context;
         }
 
-        public IList<DataType> DataType { get; set; }
+        public IList<DataType> DataType { get; set; } = default!;
 
         public async Task OnGetAsync() {
             DataType = await _context.DataTypes.ToListAsync();

@@ -16,7 +16,7 @@ namespace list_of_lists.Pages.Lists {
             _context = context;
         }
 
-        public List List { get; set; }
+        public List List { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id) {
             if (id == null) {

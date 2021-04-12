@@ -14,8 +14,7 @@
                 {
                     var selected = selectedList != null && selectedList.Id == item.Id;
                     var className = selected ? "selected" : "";
-                    <li><a href="@Url.Page("Index", new {listUid = item.Uid})" 
-                        class="@className">@item.Name</a></li>
+                    <li><a href="@Url.Page("Index", new {listUid = item.Uid})" class="@className">@item.Name</a></li>
                 }
             </ul>
         </div>
@@ -34,5 +33,13 @@
                 </div>
             </form>
         </div>
+        <div class="items-container">
+            @foreach (var item in Model.Items)
+            {
+                <li><a href="#">@item.Title</a></li>
+            }
+        </div>
+
+
     </div>
 </div>

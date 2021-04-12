@@ -21,7 +21,7 @@ namespace list_of_lists.Areas.Webmaster.Pages.DataTypes {
         }
 
         [BindProperty]
-        public DataType DataType { get; set; }
+        public DataType DataType { get; set; } = default!;
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync() {
