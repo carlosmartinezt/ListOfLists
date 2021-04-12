@@ -14,7 +14,8 @@
                 {
                     var selected = selectedList != null && selectedList.Id == item.Id;
                     var className = selected ? "selected" : "";
-                    <li><a href="@Url.Page("Index", new {listUid = item.Uid})" class="@className">@item.Name</a></li>
+                    <li><a href="@Url.Page("Index", new {listUid = item.Uid})" 
+                        class="@className">@item.Name</a></li>
                 }
             </ul>
         </div>
@@ -26,7 +27,7 @@
             <form method="post">
                 <input type="hidden" asp-for="SelectedList.Uid" />
                 <div class="form-group">
-                    <input type="text" name="title" class="textbox">
+                    <input type="text" name="title" class="textbox" placeholder="Enter a URL">
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Create" class="btn btn-primary" />

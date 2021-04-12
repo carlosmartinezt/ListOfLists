@@ -70,7 +70,7 @@ namespace list_of_lists.Services {
         }
 
         public async Task AddItemAsync(string title, string listUid) {
-            var list = GetListAsync(listUid);
+            var list = await GetListAsync(listUid);
             var item = new Data.Models.Item();
             item.Title = title;
             item.CreatorUserId = await GetUserIdAsync();
